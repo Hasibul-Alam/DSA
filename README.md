@@ -1,1 +1,1 @@
-# DSA-in-JS
+# DSA-using-JS
