@@ -24,5 +24,5 @@ let arr = [10, 7, 8, 9, 1, 5];
 
 console.log(quick_sort(arr, 0, arr.length - 1));
 
-// Time Complexity: Worst (O(n^2)) Average(O(nlogn)) Best(O(nlogn))
+// Time Complexity: Worst (O(n^2)) Average(O(nlogn)) Best(O(nlogn)) Unstable.
 // Space Complexity: O(logn)

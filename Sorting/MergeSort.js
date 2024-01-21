@@ -22,5 +22,5 @@ let arr = [45, 1, 34, 16, 6, 2, 20];
 // let arr = [1, 2, 6, 16, 20, 34, 45];
 console.log(merge_sort(arr));
 
-// Time Complexity: Worst (O(nlogn)) Average(O(nlogn)) Best(O(nlogn))
+// Time Complexity: Worst (O(nlogn)) Average(O(nlogn)) Best(O(nlogn)) Stable.
 // Space Complexity: O(n)

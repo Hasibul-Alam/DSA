@@ -15,5 +15,5 @@ const insertion_sort = (arr) => {
 let arr = [1, 2, 6, 16, 20, 34, 45];
 console.log(insertion_sort(arr));
 
-// Time Complexity: Worst (O(n^2)) Average(O(n^2)) Best(O(n))
+// Time Complexity: Worst (O(n^2)) Average(O(n^2)) Best(O(n)) Stable.
 // Space Complexity: O(1)
