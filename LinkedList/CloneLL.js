@@ -1,3 +1,6 @@
+// Problem: https://leetcode.com/problems/copy-list-with-random-pointer/description/?envType=study-plan-v2&envId=top-interview-150
+
+// Approach I: Time:O(n) Space: O(n)
 class Node {
     constructor(value) {
         this.val = value;
@@ -73,3 +76,39 @@ function main() {
 
 // Run the main function
 main();
+
+// Approach II: Time: O(n) Space:O(1)
+
+function copyRandomList(head) {
+    let temp = head;
+
+    // Step 1
+    while (temp !== null) {
+        let newNode = new Node(temp.val);
+        newNode.next = temp.next;
+        temp.next = newNode;
+        temp = temp.next.next;
+    }
+
+    // Step 2
+    let itr = head;
+    while (itr !== null) {
+        if (itr.random !== null) itr.next.random = itr.random.next;
+        itr = itr.next.next;
+    }
+
+    // Step 3
+    let dummy = new Node(0);
+    itr = head;
+    temp = dummy;
+    let fast;
+    while (itr !== null) {
+        fast = itr.next.next;
+        temp.next = itr.next;
+        itr.next = fast;
+        temp = temp.next;
+        itr = fast;
+    }
+
+    return dummy.next;
+}
