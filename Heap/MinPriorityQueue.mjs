@@ -16,7 +16,8 @@ class MinPriorityQueue {
             return null; // Queue is empty
         }
 
-        const min = this.heap[0].element;
+        const ele = this.heap[0].element;
+        const pri = this.heap[0].priority;
 
         // Replace the root with the last element and heapify down
         const lastNode = this.heap.pop();
@@ -25,7 +26,7 @@ class MinPriorityQueue {
             this.heapifyDown();
         }
 
-        return min;
+        return [ele, pri];
     }
 
     // Increase the priority of an element
@@ -127,17 +128,17 @@ class MinPriorityQueue {
 
 // Example usage:
 
-const minPriorityQueue = new MinPriorityQueue();
+export const minPriorityQueue = new MinPriorityQueue();
 
-minPriorityQueue.insert('Task 1', 3);
-minPriorityQueue.insert('Task 2', 1);
-minPriorityQueue.insert('Task 3', 5);
+// minPriorityQueue.insert('Task 1', 3);
+// minPriorityQueue.insert('Task 2', 1);
+// minPriorityQueue.insert('Task 3', 5);
 
-console.log(minPriorityQueue.extractMin()); // Output: "Task 2"
+// console.log(minPriorityQueue.extractMin()); // Output: "Task 2"
 
-minPriorityQueue.increasePriority('Task 1', 8);
-minPriorityQueue.decreasePriority('Task 3', 2);
+// minPriorityQueue.increasePriority('Task 1', 8);
+// minPriorityQueue.decreasePriority('Task 3', 2);
 
-console.log(minPriorityQueue.extractMin()); // Output: "Task 3"
-console.log(minPriorityQueue.extractMin()); // Output: "Task 1"
-console.log(minPriorityQueue.extractMin()); // Output: null (empty queue)
+// console.log(minPriorityQueue.extractMin()); // Output: "Task 3"
+// console.log(minPriorityQueue.extractMin()); // Output: "Task 1"
+// console.log(minPriorityQueue.extractMin()); // Output: null (empty queue)

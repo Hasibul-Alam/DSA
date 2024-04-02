@@ -2,23 +2,23 @@
 
 // Recursive Approach
 
-// function insertTop(s, topElement) {
-//     if (s.length === 0 || s[s.length - 1] > topElement) {
-//         s.push(topElement);
-//         return;
-//     }
-//     let temp = s.pop();
-//     insertTop(s, topElement);
-//     s.push(temp);
-// }
+function insertTop(s, topElement) {
+    if (s.length === 0 || s[s.length - 1] > topElement) {
+        s.push(topElement);
+        return;
+    }
+    let temp = s.pop();
+    insertTop(s, topElement);
+    s.push(temp);
+}
 
-// function sortStack(s) {
-//     if (s.length > 0) {
-//         let topElement = s.pop();
-//         sortStack(s);
-//         insertTop(s, topElement);
-//     }
-// }
+function sortStack(s) {
+    if (s.length > 0) {
+        let topElement = s.pop();
+        sortStack(s);
+        insertTop(s, topElement);
+    }
+}
 
 // Time: O(n^2) Space: O(n)
 
@@ -26,7 +26,7 @@
 // sortStack(s);
 // console.log(s);
 
-// Iteretive approach with temp stack
+// Iteretive approach
 
 function sort_stack(s) {
     let tempStack = [];
